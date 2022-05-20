@@ -20,6 +20,8 @@ body {
     
     font-family: 'Titillium Web', sans-serif;
     background-color: var(--color2);
+    background-image: url('../assets/fruitsveggies.jpg');
+    background-size: cover;
 }
 
 main {
@@ -128,4 +130,39 @@ footer {
 
 .auth-container button {
     margin: 10px;
+}
+.box1 {
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 40%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 1.5px solid rgb(10, 120, 153);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    text-align: center;
+} 
+.box2 {
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 40%;
+    right: 45%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 1.5px solid rgb(117, 68, 4);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    text-align: center;
+
+}
+
+.complete {
+    text-decoration: line-through;
 }
