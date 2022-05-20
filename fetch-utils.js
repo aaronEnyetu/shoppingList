@@ -46,3 +46,53 @@ export async function logout() {
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;
 // }
+export async function fetchPosts() {
+    const response = await client.from('posts').select('*');
+    return response.data;
+}
+
+export async function createNewPost(post) {
+    const response = await client.from('posts').insert(post);
+    if (response.data) {
+        return response.data;
+    } else {
+        console.error(response.error);
+    }
+}
+
+export async function createListItem(name, quantity) {
+    const response = await client.from('shopping-items').insert({ name, quantity });
+
+    if (response.error) {
+        console.error(response.error.message);
+
+    } else {
+        return response.data;
+    }
+}
+
+export async function fetchListItems() {
+    const response = await client. from('shopping-items').select('*').order('name');
+
+    if (response.error) {
+        console.error(response.error.message);
+    } else {
+        return response.data;
+    }
+
+}
+
+export async function togglePurchased(item) {
+    console.log(item);
+    const response = await client
+        .from('shopping-items')
+        .update({ purchased: !item.purchased })
+        .match({ id: item.id });
+
+    if (response.error) {
+        console.error(response.errormessage);
+    } else {
+        return response.data;
+    }
+
+}
