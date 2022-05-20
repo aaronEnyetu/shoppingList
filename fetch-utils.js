@@ -7,15 +7,10 @@ export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
 
-export async function checkAuth() {
-    if (!getUser()) {
-        location.replace('/cart-page');
-    }
 
-}
 
 export async function redirectIfLoggedIn() {
-    if (getUser()) {
+    if (!getUser()) {
         location.replace('/');
     }
 }
@@ -86,13 +81,18 @@ export async function togglePurchased(item) {
     console.log(item);
     const response = await client
         .from('shopping-items')
-        .update({ purchased: !item.purchased })
+        .update({ purchase: !item.purchase })
         .match({ id: item.id });
 
     if (response.error) {
-        console.error(response.errormessage);
+        console.error(response.error.message);
     } else {
         return response.data;
     }
 
+}
+
+export async function deleteAllItems() {
+    const response = await client.from('shopping-items').delete().match({ user_id: getUser().id });
+    return response.data;
 }

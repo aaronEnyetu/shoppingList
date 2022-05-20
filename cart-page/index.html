@@ -25,19 +25,26 @@
             <div class="center">
                 <h1>Create your Purchase</h1>
                 
-                <form id="new-post">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" />
-                    <label for="quantity">Quantity</label>
-                    <input type="text" name="quantity" id="quantity" />
-                        
-                    <button>Submit</button>
+                <form class="item-form">
+                    <label>
+                        Item:
+                        <input name="name" />
+                    </label>
+                    <label>
+                        Quantity:
+                        <input type="number" name="quantity" min="0" />
+                    </label>
+                    
+                    <button>Add item</button>
                 </form>
             </div>
         </section>
-        <section><h1>My Shopping List</h1>
+        <section>
+            <h1>My Shopping List</h1>
             <p id="error"></p>
-            <ul id="shopping-list"></ul></section>
+            <ul id="shoppingList"></ul>
+            <button id="delete-all">Delete All</button>
+        </section>
 
 
     </main>
