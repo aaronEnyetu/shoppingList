@@ -20,7 +20,7 @@ body {
     
     font-family: 'Titillium Web', sans-serif;
     background-color: var(--color2);
-    background-image: url('../assets/fruitsveggies.jpeg');
+    background-image: url('../assets/fruitsveggies.jpg');
     background-size: cover;
 }
 
@@ -136,7 +136,7 @@ footer {
     padding: 40px;
     position: absolute;
     top: 40%;
-    left: 50%;
+    left: 55%;
     transform: translate(-50%, -50%);
     background: transparent;
     border: 1.5px solid rgb(10, 120, 153);
@@ -151,7 +151,7 @@ footer {
     padding: 40px;
     position: absolute;
     top: 40%;
-    right: 50%;
+    right: 45%;
     transform: translate(-50%, -50%);
     background: transparent;
     border: 1.5px solid rgb(117, 68, 4);
